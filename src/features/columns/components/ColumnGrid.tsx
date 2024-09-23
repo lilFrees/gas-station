@@ -33,11 +33,9 @@ function ColumnGrid() {
   }, [width]);
 
   return (
-    <div className="flex grow flex-col gap-5 border">
-      <h1 className="text-2xl font-semibold">Колонки</h1>
-
+    <div className="flex h-full flex-col">
       <div
-        className="grid grid-rows-[repeat(3,min-content)] gap-[1vw]"
+        className="grid h-full grow grid-rows-3 gap-[1vw]"
         style={{
           transform: `scale(${scale})`,
           transformOrigin: "top left",

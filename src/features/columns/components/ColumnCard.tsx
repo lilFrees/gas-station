@@ -6,7 +6,7 @@ import { FaCirclePlay } from "react-icons/fa6";
 
 function ColumnCard({ id }: { id: number }) {
   return (
-    <div className="w-full">
+    <div className="h-full w-full">
       <div className="relative left-0 top-0 h-full w-full overflow-hidden rounded-xl border-[1.5px] border-primary bg-white px-[0.5vw] py-[0.25vw]">
         <div className="absolute left-1/2 top-0 w-1/3 -translate-x-1/2">
           <img

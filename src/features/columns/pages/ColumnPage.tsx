@@ -15,9 +15,10 @@ function ColumnPage() {
   }, [user, navigate]);
 
   return (
-    <div className="flex min-h-screen flex-col bg-slate-50">
+    <div className="flex min-h-screen flex-col gap-5 bg-slate-50">
       <ColumnNavigation />
-      <div className="mx-auto h-[calc(100vh-3.5rem)] w-full max-w-6xl grow px-[2vw]">
+      <div className="mx-auto flex w-full max-w-6xl grow flex-col gap-5 px-[2vw]">
+        <h1 className="text-2xl font-semibold">Колонки</h1>
         <ColumnGrid />
       </div>
     </div>

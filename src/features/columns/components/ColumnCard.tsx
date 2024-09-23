@@ -1,6 +1,5 @@
 import { Input } from "antd";
 import { TbGridDots } from "react-icons/tb";
-import status from "../../../assets/status.svg";
 import BrandButton from "../../../shared/components/Button";
 import { FaCirclePlay } from "react-icons/fa6";
 
@@ -8,13 +7,6 @@ function ColumnCard({ id }: { id: number }) {
   return (
     <div className="h-full w-full">
       <div className="relative left-0 top-0 h-full w-full overflow-hidden rounded-xl border-[1.5px] border-primary bg-white px-[0.5vw] py-[0.25vw]">
-        <div className="absolute left-1/2 top-0 w-1/3 -translate-x-1/2">
-          <img
-            src={status}
-            alt="Status"
-            className="h-full w-full object-contain"
-          />
-        </div>
         <div className="mx-auto flex w-[95%] flex-col">
           <div className="flex items-center justify-between gap-[1vw]">
             <div className="text-parent-50 font-bold">#{id + 1}</div>

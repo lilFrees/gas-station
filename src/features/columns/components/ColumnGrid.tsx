@@ -32,6 +32,10 @@ function ColumnGrid() {
     getScaleValue();
   }, [width]);
 
+  const numCards = cards.length;
+  const rows = Math.min(3, Math.ceil(numCards / 6));
+  const columns = numCards <= 6 ? numCards : Math.ceil(numCards / rows);
+
   return (
     <div className="flex h-full flex-col">
       <div
@@ -40,8 +44,8 @@ function ColumnGrid() {
           transform: `scale(${scale})`,
           transformOrigin: "top left",
           width: `${100 / scale}%`,
-          gridTemplateColumns: `repeat(${Math.ceil(cards.length / 3)},1fr)`,
-          gridAutoRows: 0,
+          gridTemplateColumns: `repeat(${columns},1fr)`,
+          gridTemplateRows: `repeat(${rows},1fr)`,
         }}
       >
         {...cards}

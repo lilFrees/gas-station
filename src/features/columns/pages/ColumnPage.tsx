@@ -18,16 +18,18 @@ function ColumnPage() {
   return (
     <div className="flex h-screen flex-col overflow-hidden bg-slate-50">
       <ColumnNavigation />
+      <h1 className="text-2xl font-semibold">Колонки</h1>
       <PanelGroup direction="vertical">
-        <Panel className="flex flex-col">
-          <h1 className="text-2xl font-semibold">Колонки</h1>
-          <div className="h-full border-4 border-red-500">
+        <Panel maxSize={90} className="flex flex-col border-4 border-red-500">
+          <div className="h-full">
             <ColumnGrid />
           </div>
         </Panel>
-        <PanelResizeHandle className="h-4 bg-slate-300" />
+        <PanelResizeHandle className="flex h-4 items-center justify-center overflow-visible bg-slate-300">
+          <div className="h-3 w-3 rounded-full bg-slate-500"></div>
+        </PanelResizeHandle>
         <Panel>
-          <div className="h-full overflow-auto bg-white p-4 pt-6">
+          <div className="h-full overflow-hidden bg-white p-4 pt-6">
             <div className="text-3xl">Heading</div>
           </div>
         </Panel>

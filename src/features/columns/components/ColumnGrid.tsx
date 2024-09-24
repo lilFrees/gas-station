@@ -12,7 +12,7 @@ function getCards(target: number) {
   return result;
 }
 
-const cards = getCards(15);
+const cards = getCards(13);
 
 function ColumnGrid() {
   const { width } = useScreenSize();

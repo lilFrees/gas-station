@@ -35,15 +35,14 @@ function ColumnGrid() {
   const columns = numCards <= 6 ? numCards : Math.ceil(numCards / rows);
 
   return (
-    <div className="mb-10 flex h-full min-h-0 flex-col">
+    <div className="flex h-full flex-col">
       <div
-        className="grid max-h-min grow gap-[1vw]"
+        className="grid gap-[1vw]"
         style={{
           transform: `scale(${scale})`,
           transformOrigin: "top left",
           width: `${100 / scale}%`,
           gridTemplateColumns: `repeat(${columns},1fr)`,
-          gridTemplateRows: `repeat(${rows},minmax(0,min-content))`,
           minHeight: 0,
         }}
       >

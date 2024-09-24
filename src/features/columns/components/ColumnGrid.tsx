@@ -35,7 +35,7 @@ function ColumnGrid() {
   const columns = numCards <= 6 ? numCards : Math.ceil(numCards / rows);
 
   return (
-    <div className="flex h-full flex-col">
+    <div className="flex h-full flex-col border-4 border-blue-500">
       <div
         className="grid gap-[1vw]"
         style={{

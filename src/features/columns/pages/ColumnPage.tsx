@@ -21,7 +21,9 @@ function ColumnPage() {
       <PanelGroup direction="vertical">
         <Panel className="flex flex-col">
           <h1 className="text-2xl font-semibold">Колонки</h1>
-          <ColumnGrid />
+          <div className="h-full border-4 border-red-500">
+            <ColumnGrid />
+          </div>
         </Panel>
         <PanelResizeHandle className="h-4 bg-slate-300" />
         <Panel>

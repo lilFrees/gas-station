@@ -12,20 +12,18 @@ function getCards(target: number) {
   return result;
 }
 
-const cards = getCards(25);
+const cards = getCards(15);
 
 function ColumnGrid() {
   const { width } = useScreenSize();
-  const [scale, setScale] = useState<number>(0);
+  const [scale, setScale] = useState<number>(1);
 
   useEffect(() => {
     function getScaleValue() {
-      if (width > 0) {
-        if (width <= 1024) {
-          setScale(width / 1000);
-        } else {
-          setScale(1);
-        }
+      if (width > 1200) {
+        setScale(1);
+      } else if (width <= 1200) {
+        setScale(width / 1200);
       }
     }
 
@@ -37,15 +35,16 @@ function ColumnGrid() {
   const columns = numCards <= 6 ? numCards : Math.ceil(numCards / rows);
 
   return (
-    <div className="flex h-full flex-col">
+    <div className="mb-10 flex h-full min-h-0 flex-col">
       <div
-        className="grid h-full grow grid-rows-3 gap-[1vw]"
+        className="grid max-h-min grow gap-[1vw]"
         style={{
           transform: `scale(${scale})`,
           transformOrigin: "top left",
           width: `${100 / scale}%`,
           gridTemplateColumns: `repeat(${columns},1fr)`,
-          gridTemplateRows: `repeat(${rows},1fr)`,
+          gridTemplateRows: `repeat(${rows},minmax(0,min-content))`,
+          minHeight: 0,
         }}
       >
         {...cards}

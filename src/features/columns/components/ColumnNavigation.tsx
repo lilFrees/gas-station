@@ -1,14 +1,14 @@
 import { StopOutlined } from "@ant-design/icons";
-import ActionButton from "./ActionButton";
-import { FaTowerBroadcast, FaXmark } from "react-icons/fa6";
-import Logo from "../../../shared/components/Logo";
+import { Modal } from "antd";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import LinkItem from "./LinkItem";
+import { FaTowerBroadcast } from "react-icons/fa6";
 import profilePic from "../../../assets/profile.svg";
-import { useAuth } from "../../auth/hooks/useAuth";
-import { Modal } from "antd";
 import BrandButton from "../../../shared/components/Button";
+import Logo from "../../../shared/components/Logo";
+import { useAuth } from "../../auth/hooks/useAuth";
+import ActionButton from "./ActionButton";
+import LinkItem from "./LinkItem";
 
 const linkItems: {
   text: string;

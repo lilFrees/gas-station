@@ -21,7 +21,7 @@ function InputField({
       <Input
         id={id}
         type="text"
-        className={`w-full rounded-[0.5vw] p-[2%] text-parent-20 ${size === "small" ? "!h-6" : ""}`}
+        className={`w-full rounded-[0.5vw] p-[2%] text-parent-20 disabled:select-none ${size === "small" ? "!h-6" : ""}`}
         value={value}
         disabled
       />

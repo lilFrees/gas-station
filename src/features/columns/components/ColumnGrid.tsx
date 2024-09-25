@@ -54,7 +54,7 @@ function ColumnGrid() {
       rows.push(
         <div
           key={i}
-          className="mb-[1vw] flex h-full min-h-0 shrink basis-1/3 items-center justify-between gap-[1vw]"
+          className="mb-[1vw] flex min-h-0 shrink basis-1/3 items-center justify-between gap-[1vw]"
         >
           {rowCards.map((card, index) => (
             <div key={index} style={cardStyle}>
@@ -74,11 +74,9 @@ function ColumnGrid() {
   };
 
   return (
-    <div className="h-full w-fit">
-      <div
-        className="max-h-max grow overflow-hidden border-4 border-orange-500"
-        style={containerStyle}
-      >
+    <div className="mx-auto w-full max-w-6xl px-2">
+      <h1 className="mb-5 text-2xl font-bold">Колонки</h1>
+      <div className="overflow-hidden" style={containerStyle}>
         {createRows()}
       </div>
     </div>

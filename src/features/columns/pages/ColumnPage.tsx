@@ -10,7 +10,7 @@ function TopContent() {
 }
 
 function BottomContent() {
-  return <h1>Bottom</h1>;
+  return <div className="mx-auto w-full max-w-6xl px-2">Bottom</div>;
 }
 
 function ColumnPage() {

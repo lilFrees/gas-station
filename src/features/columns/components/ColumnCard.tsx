@@ -6,7 +6,7 @@ import InputField from "./InputField";
 
 function ColumnCard({ id }: { id: number }) {
   return (
-    <div className="flex flex-col overflow-hidden rounded-xl border-[1.5px] border-primary bg-white p-[0.5vw]">
+    <div className="flex select-none flex-col overflow-hidden rounded-xl border-[1.5px] border-primary bg-white p-[0.5vw]">
       <div className="mb-2 flex items-center justify-between gap-[1vw]">
         <div className="text-parent-50 font-bold">#{id + 1}</div>
         <button className="rounded-md p-[0.2vw] text-parent-50 transition-all duration-200 hover:bg-slate-100">

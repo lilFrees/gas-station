@@ -1,6 +1,7 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { useScreenSize } from "../../../shared/hooks/useScreenSize";
 import ColumnCard from "./ColumnCard";
+import ColumnNavigation from "./ColumnNavigation";
 
 function getCards(target: number) {
   const result: ReactNode[] = [];
@@ -41,12 +42,6 @@ function ColumnGrid() {
     width: `${100 / scale}%`,
   };
 
-  const rowStyle = {
-    display: "flex",
-    gap: "1vw",
-    marginBottom: "1vw",
-  };
-
   const cardStyle = {
     flex: `1 0 calc(${100 / itemsPerRow}% - 1vw)`,
     maxWidth: `calc(${100 / itemsPerRow}% - 1vw)`,
@@ -57,7 +52,10 @@ function ColumnGrid() {
     for (let i = 0; i < numCards; i += itemsPerRow) {
       const rowCards = cards.slice(i, i + itemsPerRow);
       rows.push(
-        <div key={i} style={rowStyle}>
+        <div
+          key={i}
+          className="mb-[1vw] flex shrink-0 grow basis-1/3 items-center justify-between gap-[1vw]"
+        >
           {rowCards.map((card, index) => (
             <div key={index} style={cardStyle}>
               {card}
@@ -76,8 +74,14 @@ function ColumnGrid() {
   };
 
   return (
-    <div className="h-fit border-4 border-orange-500" style={containerStyle}>
-      {createRows()}
+    <div className="h-full w-fit">
+      <h1 className="text-2xl font-semibold">Колонки</h1>
+      <div
+        className="h-full max-h-full grow overflow-hidden border-4 border-orange-500"
+        style={containerStyle}
+      >
+        {createRows()}
+      </div>
     </div>
   );
 }

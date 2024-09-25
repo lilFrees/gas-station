@@ -43,7 +43,7 @@ function ColumnNavigation() {
 
   return (
     <div className="border-b border-slate-300 bg-white">
-      <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between gap-5 overflow-hidden px-6">
+      <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between gap-5 overflow-hidden px-2">
         <div className="flex h-full items-center gap-6">
           <Logo />
           <AnimatePresence>

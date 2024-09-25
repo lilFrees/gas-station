@@ -15,8 +15,6 @@ function ResizablePanel({ TopContent, BottomContent }: ResizablePanelProps) {
 
     const y = Math.max(0, Math.min(event.clientY - rect.top, rect.height));
 
-    console.log(y);
-
     const percent = Math.max(0, Math.min((y / rect.height) * 100, 100));
     setSlidePos(percent);
   };

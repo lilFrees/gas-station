@@ -55,7 +55,7 @@ function ResizablePanel({ TopContent, BottomContent }: ResizablePanelProps) {
           }}
           onMouseDown={handleMouseDown}
         >
-          <div className="absolute -top-1 left-1/2 -translate-x-1/2 rounded-full bg-white"></div>
+          <div className="absolute left-1/2 top-0 -translate-x-1/2 rounded-full bg-white"></div>
         </div>
       </div>
     </div>

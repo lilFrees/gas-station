@@ -4,13 +4,14 @@ import { useAuth } from "../../auth/hooks/useAuth";
 import ColumnGrid from "../components/ColumnGrid";
 import ColumnNavigation from "../components/ColumnNavigation";
 import ResizablePanel from "../../../shared/components/ResizablePanels";
+import BottomTab from "../components/BottomTab";
 
 function TopContent() {
   return <ColumnGrid />;
 }
 
 function BottomContent() {
-  return <div className="mx-auto w-full max-w-6xl px-2">Bottom</div>;
+  return <BottomTab />;
 }
 
 function ColumnPage() {

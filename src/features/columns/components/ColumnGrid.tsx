@@ -41,8 +41,8 @@ function ColumnGrid() {
     transformOrigin: "top left",
     width: `${100 / scale}%`,
     height: `${100 / scale}%`,
-    // paddingBottom: `${100 / scale}%`,
-    flexShrink: 1, // Allow the flex container to shrink
+    paddingBottom: "calc(100% - )",
+    flexShrink: 1,
     overflow: "hidden",
   };
 
@@ -54,7 +54,7 @@ function ColumnGrid() {
   const renderRow = (startIndex: number, rowIndex: number) => {
     const rowCards = cards.slice(startIndex, startIndex + itemsPerRow);
     return (
-      <Flex className="mb-[1vw] h-full max-h-min min-h-0 items-start gap-[1vw] overflow-hidden">
+      <Flex className="mb-[1vw] h-full max-h-min min-h-0 items-start gap-[1vw]">
         {rowCards.map((card, index) => (
           <div key={index} style={cardStyle} className="size-full">
             {card}
@@ -71,8 +71,8 @@ function ColumnGrid() {
   };
 
   return (
-    <div className="mx-auto h-full w-full max-w-6xl px-2">
-      <h1 className="grow text-2xl font-bold">Колонки</h1>
+    <div className="mx-auto h-full w-full max-w-6xl px-2 pb-6">
+      <h2 className="grow text-2xl font-bold">Колонки</h2>
       <Flex
         vertical
         style={containerStyle}

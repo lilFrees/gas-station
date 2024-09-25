@@ -1,7 +1,7 @@
 import { ReactNode, useEffect, useState } from "react";
 import { useScreenSize } from "../../../shared/hooks/useScreenSize";
 import ColumnCard from "./ColumnCard";
-import ColumnNavigation from "./ColumnNavigation";
+import { Flex } from "antd";
 
 function getCards(target: number) {
   const result: ReactNode[] = [];
@@ -13,7 +13,7 @@ function getCards(target: number) {
   return result;
 }
 
-const cards = getCards(15);
+const cards = getCards(16);
 
 function ColumnGrid() {
   const { width } = useScreenSize();
@@ -40,6 +40,10 @@ function ColumnGrid() {
     transform: `scale(${scale})`,
     transformOrigin: "top left",
     width: `${100 / scale}%`,
+    height: `${100 / scale}%`,
+    // paddingBottom: `${100 / scale}%`,
+    flexShrink: 1, // Allow the flex container to shrink
+    overflow: "hidden",
   };
 
   const cardStyle = {
@@ -47,38 +51,37 @@ function ColumnGrid() {
     maxWidth: `calc(${100 / itemsPerRow}% - 1vw)`,
   };
 
-  const createRows = () => {
-    const rows = [];
-    for (let i = 0; i < numCards; i += itemsPerRow) {
-      const rowCards = cards.slice(i, i + itemsPerRow);
-      rows.push(
-        <div
-          key={i}
-          className="mb-[1vw] flex min-h-0 shrink basis-1/3 items-center justify-between gap-[1vw]"
-        >
-          {rowCards.map((card, index) => (
-            <div key={index} style={cardStyle}>
-              {card}
-            </div>
-          ))}
-          {rowCards.length < itemsPerRow &&
-            Array(itemsPerRow - rowCards.length)
-              .fill(null)
-              .map((_, index) => (
-                <div key={`empty-${index}`} style={cardStyle} />
-              ))}
-        </div>,
-      );
-    }
-    return rows;
+  const renderRow = (startIndex: number, rowIndex: number) => {
+    const rowCards = cards.slice(startIndex, startIndex + itemsPerRow);
+    return (
+      <Flex className="mb-[1vw] h-full max-h-min min-h-0 items-start gap-[1vw] overflow-hidden">
+        {rowCards.map((card, index) => (
+          <div key={index} style={cardStyle} className="size-full">
+            {card}
+          </div>
+        ))}
+        {rowCards.length < itemsPerRow &&
+          Array(itemsPerRow - rowCards.length)
+            .fill(null)
+            .map((_, index) => (
+              <div key={`empty-${rowIndex}-${index}`} style={cardStyle} />
+            ))}
+      </Flex>
+    );
   };
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-2">
-      <h1 className="mb-5 text-2xl font-bold">Колонки</h1>
-      <div className="overflow-hidden" style={containerStyle}>
-        {createRows()}
-      </div>
+    <div className="mx-auto h-full w-full max-w-6xl px-2">
+      <h1 className="grow text-2xl font-bold">Колонки</h1>
+      <Flex
+        vertical
+        style={containerStyle}
+        className="max-h-min overflow-hidden"
+      >
+        {Array.from({ length: rows }).map((_, rowIndex) =>
+          renderRow(rowIndex * itemsPerRow, rowIndex),
+        )}
+      </Flex>
     </div>
   );
 }

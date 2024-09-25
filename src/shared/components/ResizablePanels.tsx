@@ -33,7 +33,7 @@ function ResizablePanel({ TopContent, BottomContent }: ResizablePanelProps) {
     <div className="relative size-full" id="slider">
       <div className="relative h-full overflow-hidden">
         <div
-          className="absolute inset-0 top-0 overflow-hidden"
+          className="overflow-hidden"
           style={{
             height: `${slidePos}%`,
           }}
@@ -41,7 +41,7 @@ function ResizablePanel({ TopContent, BottomContent }: ResizablePanelProps) {
           <TopContent />
         </div>
         <div
-          className="absolute inset-x-0 bottom-0 overflow-hidden"
+          className="overflow-hidden"
           style={{
             height: `${100 - slidePos}%`,
           }}
@@ -49,7 +49,7 @@ function ResizablePanel({ TopContent, BottomContent }: ResizablePanelProps) {
           <BottomContent />
         </div>
         <div
-          className="absolute inset-x-0 h-2 cursor-ns-resize bg-slate-300"
+          className="absolute inset-x-0 mx-auto h-2 w-full max-w-6xl cursor-ns-resize rounded-full bg-slate-300 px-2"
           style={{
             top: `calc(${slidePos}% - 1px)`,
           }}

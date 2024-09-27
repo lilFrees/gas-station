@@ -14,14 +14,14 @@ function InputField({
   return (
     <label htmlFor={id} className="flex flex-col">
       <div
-        className={`w-max ${size === "small" ? "text-parent-10" : "text-parent-20"}`}
+        className={`w-max ${size === "small" ? "text-parent-100" : "text-parent-80"}`}
       >
         {label}
       </div>
       <Input
         id={id}
         type="text"
-        className={`w-full rounded-[0.5vw] p-[2%] text-parent-20 disabled:select-none ${size === "small" ? "!h-6" : ""}`}
+        className={`w-full rounded-[0.5vw] p-[2%] text-parent-80 disabled:select-none ${size === "small" ? "!h-6" : ""}`}
         value={value}
         disabled
       />

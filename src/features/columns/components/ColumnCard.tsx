@@ -8,8 +8,8 @@ function ColumnCard({ id }: { id: number }) {
   return (
     <div className="h-full w-full select-none overflow-hidden rounded-xl border-[1.5px] border-primary bg-white p-[0.5vw]">
       <div className="mb-2 flex items-center justify-between gap-[1vw]">
-        <div className="text-parent-50 font-bold">#{id + 1}</div>
-        <button className="rounded-md p-[0.2vw] text-parent-50 transition-all duration-200 hover:bg-slate-100">
+        <div className="text-parent-100 font-bold">#{id + 1}</div>
+        <button className="rounded-md p-[0.2vw] text-parent-80 transition-all duration-200 hover:bg-slate-100">
           <TbGridDots />
         </button>
       </div>
@@ -25,11 +25,11 @@ function ColumnCard({ id }: { id: number }) {
       <Input
         type="text"
         size="small"
-        className="mb-2 w-full rounded-md p-[0.2vw] text-parent-20"
+        className="mb-2 w-full rounded-md p-[0.2vw] text-parent-80"
       />
       <BrandButton
         variant="primary"
-        className="mt-auto h-auto gap-[0.25vw] p-[0.25vw] text-parent-30"
+        className="mt-auto h-auto gap-[0.25vw] p-[0.25vw] text-parent-80"
         icon={<FaCirclePlay />}
       >
         Старт

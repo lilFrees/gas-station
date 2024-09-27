@@ -13,7 +13,7 @@ function getCards(target: number) {
   return result;
 }
 
-const cards = getCards(16);
+const cards = getCards(10);
 
 function ColumnGrid() {
   const { width } = useScreenSize();
@@ -52,9 +52,19 @@ function ColumnGrid() {
   };
 
   const renderRow = (startIndex: number, rowIndex: number) => {
+    // const idArr = cards.map((j) => +(j?.valueOf() as any).key);
+
+    // const rowCardId = idArr.map((id, _, arr) => {
+    //   return arr[rows * id + rowIndex];
+    // });
+
+    // const rowCards = rowCardId.map((id) => cards[id]);
     const rowCards = cards.slice(startIndex, startIndex + itemsPerRow);
     return (
-      <Flex className="mb-[1vw] h-full max-h-min min-h-0 items-start gap-[1vw]">
+      <Flex
+        key={startIndex}
+        className="mb-[1vw] h-full max-h-min min-h-0 items-start gap-[1vw]"
+      >
         {rowCards.map((card, index) => (
           <div key={index} style={cardStyle} className="size-full">
             {card}
